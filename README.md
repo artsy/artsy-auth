@@ -18,11 +18,13 @@ Add `artsy_auth.rb` under `config/initializers`. We need to configure `ArtsyAuth
 
 ```ruby
 # config/initalizers/artsy_auth.rb
-ArtsyAuth.config.artsy_url = 'https://stagingapi.artsy.net'
-ArtsyAuth.config.callback_url = '/admin'
-ArtsyAuth.config.application_id = '321322131'
-ArtsyAuth.config.application_secret = '123123asdasd'
+ArtsyAuth.config.artsy_url = 'https://stagingapi.artsy.net' # required
+ArtsyAuth.config.callback_url = '/admin' # optional
+ArtsyAuth.config.application_id = '321322131' # required
+ArtsyAuth.config.application_secret = '123123asdasd' # required
 ```
+
+ArtsyAuth uses [omniauth-artsy](https://github.com/artsy/omniauth-artsy) to be able to use `:artsy` as a provider and that gem [reuqires](https://github.com/artsy/omniauth-artsy#configuration) `ENV['ARTSY_API_URL']` to be set properly.
 
 You also need to mount session related endpoints to your app, in your `config/routes.rb`. Add following line to your current routes.
 ```ruby
