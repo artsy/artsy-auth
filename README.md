@@ -1,4 +1,4 @@
-# Artsy Authentication
+# Artsy Authentication [![Build Status](https://travis-ci.org/artsy/artsy-auth.svg?branch=master)](https://travis-ci.org/artsy/artsy-auth)
 
 Ruby Gem for adding Artsy's omniauth based authentication to your app.
 
