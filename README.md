@@ -18,10 +18,12 @@ Add `artsy_auth.rb` under `config/initializers`. We need to configure `ArtsyAuth
 
 ```ruby
 # config/initalizers/artsy_auth.rb
-ArtsyAuth.config.artsy_url = 'https://stagingapi.artsy.net' # required
-ArtsyAuth.config.callback_url = '/admin' # optional
-ArtsyAuth.config.application_id = '321322131' # required
-ArtsyAuth.config.application_secret = '123123asdasd' # required
+ArtsyAuth.configure do |config|
+  config.artsy_url = 'https://stagingapi.artsy.net' # required
+  config.callback_url = '/admin' # optional
+  config.application_id = '321322131' # required
+  config.application_secret = '123123asdasd' # required
+end
 ```
 
 ArtsyAuth uses [omniauth-artsy](https://github.com/artsy/omniauth-artsy) to be able to use `:artsy` as a provider and that gem [reuqires](https://github.com/artsy/omniauth-artsy#configuration) `ENV['ARTSY_API_URL']` to be set properly.
