@@ -19,7 +19,8 @@ Add `artsy_auth.rb` under `config/initializers`. We need to configure `ArtsyAuth
 ```ruby
 # config/initalizers/artsy_auth.rb
 ArtsyAuth.configure do |config|
-  config.artsy_url = 'https://stagingapi.artsy.net' # required
+  config.artsy_api_url = 'https://stagingapi.artsy.net' # required
+  config.artsy_url = 'https://staging.artsy.net' # required
   config.callback_url = '/admin' # optional
   config.application_id = '321322131' # required
   config.application_secret = '123123asdasd' # required
@@ -61,3 +62,4 @@ end
 * Make your feature addition or bug fix with tests.
 * Update CHANGELOG.
 * Send a pull request. Bonus points for topic branches.
+
