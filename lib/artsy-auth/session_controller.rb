@@ -5,12 +5,12 @@ module ArtsyAuth
       session[:user_id] = auth_hash['uid']
       session[:email] = auth_hash['info']['raw_info']['email']
       session[:access_token] = auth_hash['credentials']['token']
-      redirect_to ArtsyAuth.config[:callback_url]
+      redirect_to ArtsyAuth.config.callback_url
     end
 
     def destroy
       reset_session
-      redirect_to "#{ArtsyAuth.config[:artsy_url]}/users/sign_out"
+      redirect_to "#{ArtsyAuth.config.artsy_url}/users/sign_out"
     end
 
     protected
