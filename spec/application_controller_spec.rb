@@ -17,7 +17,7 @@ module ArtsyAuth
         get :hello_authenticated_world
       end
       it 'redirects to /auth/artsy' do
-          expect(response).to redirect_to('/auth/artsy')
+        expect(response).to redirect_to('/auth/artsy')
       end
       it 'sets session[:redirect_to]' do
         expect(session.key?(:redirect_to)).to be true
