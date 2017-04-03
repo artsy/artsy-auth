@@ -21,7 +21,13 @@ module ArtsyAuth
 
   class << self
     def configure
-      block_given? ? yield(Config) : Config
+      if block_given?
+        yield(Config)
+        OmniAuth::Artsy.configure do |config|
+          config.artsy_api_url = ArtsyAuth.config.artsy_api_url
+        end
+      end
+      Config
     end
 
     def config
