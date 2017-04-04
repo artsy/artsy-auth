@@ -10,7 +10,7 @@ module ArtsyAuth
 
     def destroy
       reset_session
-      redirect_to "#{ArtsyAuth.config.artsy_url}/users/sign_out"
+      redirect_to "#{ArtsyAuth.config.artsy_api_url}/users/sign_out"
     end
 
     protected

@@ -13,14 +13,13 @@ gem 'artsy-auth'
 Artsy Auth is based on [`Rails::Engine`](http://api.rubyonrails.org/classes/Rails/Engine.html).
 
 ### Configure
-Add `artsy_auth.rb` under `config/initializers`. We need to configure `ArtsyAuth` to use proper Artsy `application_id` and `application_secret`. Also it needs `artsy_url` which will be used to redirect `sign_out` to proper location, and `artsy_api_url` for login.
+Add `artsy_auth.rb` under `config/initializers`. We need to configure `ArtsyAuth` to use proper Artsy `application_id` and `application_secret`. Also it needs `artsy_api_url` which will be used to redirect `sign_in` and `sign_out` to proper location.
 `callback_url` defines after a successful omniauth handshake, where should we get redirected to.
 
 ```ruby
 # config/initalizers/artsy_auth.rb
 ArtsyAuth.configure do |config|
   config.artsy_api_url = 'https://stagingapi.artsy.net' # required
-  config.artsy_url = 'https://staging.artsy.net' # required
   config.callback_url = '/admin' # optional
   config.application_id = '321322131' # required
   config.application_secret = '123123asdasd' # required
