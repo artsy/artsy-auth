@@ -27,18 +27,18 @@ module ArtsyAuth
       before do
         session[:access_token] = 'accepted-token'
       end
-      context 'wihtout authorized? method' do
+      context 'wihtout authorized_artsy_token? method' do
         it 'raises NotImplementedError' do
           expect { get :hello_authenticated_world }.to raise_error NotImplementedError
         end
       end
-      context 'with authorized? method' do
+      context 'with authorized_artsy_token? method' do
         controller do
           def hello_authenticated_world
             render plain: 'Hello from authenticated world'
           end
 
-          def authorized?(token)
+          def authorized_artsy_token?(token)
             token == 'accepted-token'
           end
         end

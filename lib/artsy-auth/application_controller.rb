@@ -4,7 +4,7 @@ module ArtsyAuth
 
     def require_artsy_authentication
       if session[:access_token]
-        head(:forbidden) unless authorized? session[:access_token]
+        head(:forbidden) unless authorized_artsy_token? session[:access_token]
       else
         clear_session_and_reauth! unless session[:access_token]
       end
@@ -16,7 +16,7 @@ module ArtsyAuth
       redirect_to '/auth/artsy'
     end
 
-    def authorized?(token)
+    def authorized_artsy_token?(token)
       raise NotImplementedError
     end
   end

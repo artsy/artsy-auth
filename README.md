@@ -39,7 +39,7 @@ class ApplicationController < ArtsyAuth::ApplicationController
   protect_from_forgery with: :exception
 
   # override applicaiton to decode token and allow only users with `tester` role
-  def authorized?(token)
+  def authorized_artsy_token?(token)
     decoded_token, _headers = JWT.decode(token, 'some-secret')
     decoded_token['roles'].include? 'tester'
   end
