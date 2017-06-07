@@ -3,7 +3,7 @@
 Ruby Gem for adding Artsy's omniauth based authentication to your app.
 
 ## Installation
-Add following line to your Gemfile
+Add following line to your Gemfile.
 
 ```
 gem 'artsy-auth'
@@ -32,26 +32,27 @@ You also need to mount session related endpoints to your app, in your `config/ro
 mount ArtsyAuth::Engine => '/'
 ```
 
-In order to force authentication, you need to change your `ApplicationController` to inherit from ` ArtsyAuth::ApplicationController`, you also need to add (override) `authorize?` method there which gets a token and in your app you need to define how do you authorize that token, for example:
+In order to force authentication, you need to include 'ArtsyAuth::Authenticated' in your controller, you also need to add (override) `authorized_artsy_token?` method there which gets a token and in your app you need to define how do you authorize that token, for example:
 ```ruby
 class ApplicationController < ArtsyAuth::ApplicationController
   # Prevent CSRF attacks by raising an exception.
   protect_from_forgery with: :exception
 
-  # override applicaiton to decode token and allow only users with `tester` role
+  # This will make sure calls to this controller have proper session data
+  # if they don't it will redirect them to oauth url and once authenticated
+  # on successful authentication we'll call authorized_artsy_token
+  include ArtsyAuth::Authenticated
+
+  # override application to decode token and allow only users with `tester` role
   def authorized_artsy_token?(token)
     decoded_token, _headers = JWT.decode(token, 'some-secret')
     decoded_token['roles'].include? 'tester'
   end
 end
 ```
-Note that this will add authentication to all of your controllers, if you want to skip Artsy's authentication for specific controller you can skip it in your controller by adding:
-```ruby
-class TestController
-  skip_before_action :require_artsy_authentication
-end
-```
 
+# Update From Version < 0.1.7
+In previous versions you would change your `ApplicationController` to inherit from `ArtsyAuth::ApplicationController`, with versions > `0.1.7` you need to `include ArtsyAuth::Authenticated` like the example above.
 
 # Contributing
 
