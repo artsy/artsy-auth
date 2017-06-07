@@ -34,7 +34,7 @@ mount ArtsyAuth::Engine => '/'
 
 In order to force authentication, you need to include 'ArtsyAuth::Authenticated' in your controller, you also need to add (override) `authorized_artsy_token?` method there which gets a token and in your app you need to define how do you authorize that token, for example:
 ```ruby
-class ApplicationController < ArtsyAuth::ApplicationController
+class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   protect_from_forgery with: :exception
 
