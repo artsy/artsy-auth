@@ -1,6 +1,12 @@
 module ArtsyAuth
-  class ApplicationController < ActionController::Base
-    before_action :require_artsy_authentication
+  module Authenticated
+    extend ActiveSupport::Concern
+
+    included do
+      before_action :require_artsy_authentication
+    end
+
+    private
 
     def require_artsy_authentication
       if session[:access_token]

@@ -1,6 +1,5 @@
 module ArtsyAuth
-  class SessionsController < ApplicationController
-    skip_before_action :require_artsy_authentication
+  class SessionsController < ActionController::Base
     def create
       session[:user_id] = auth_hash['uid']
       session[:email] = auth_hash['info']['raw_info']['email']
