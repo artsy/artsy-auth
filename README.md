@@ -17,7 +17,7 @@ Add `artsy_auth.rb` under `config/initializers`. We need to configure `ArtsyAuth
 `callback_url` defines after a successful omniauth handshake, where should we get redirected to.
 
 ```ruby
-# config/initalizers/artsy_auth.rb
+# config/initializers/artsy_auth.rb
 ArtsyAuth.configure do |config|
   config.artsy_api_url = 'https://stagingapi.artsy.net' # required
   config.callback_url = '/admin' # optional
