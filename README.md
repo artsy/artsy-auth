@@ -51,6 +51,13 @@ class ApplicationController < ActionController::Base
 end
 ```
 
+# Decoding the JWT
+
+The JWT is signed using a different secret from the client secret for OAuth. For Artsy engineers: get it from the `internal_secret` on your corresponding `ClientApplication` model. External engineers, send an email to ashkan@ or orta@ artsymail.com.
+
+The JWT contains user information that you can get from an API call to get the `me` user account, you can work around not having the secret by making a request for that against the API.
+
+
 # Update From Version < 0.1.7
 In previous versions you would change your `ApplicationController` to inherit from `ArtsyAuth::ApplicationController`, with versions > `0.1.7` you need to `include ArtsyAuth::Authenticated` like the example above.
 
