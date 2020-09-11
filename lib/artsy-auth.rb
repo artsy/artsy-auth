@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'artsy-auth/authenticated'
 require 'artsy-auth/config'
 require 'artsy-auth/engine'

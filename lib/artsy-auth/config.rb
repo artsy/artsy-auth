@@ -1,11 +1,10 @@
+# frozen_string_literal: true
+
 module ArtsyAuth
   module Config
     extend self
 
-    attr_accessor :artsy_api_url
-    attr_accessor :application_id
-    attr_accessor :application_secret
-    attr_accessor :callback_url
+    attr_accessor :artsy_api_url, :application_id, :application_secret, :callback_url
 
     def reset
       self.artsy_api_url = nil

@@ -1,4 +1,6 @@
-$LOAD_PATH.push File.expand_path('../lib', __FILE__)
+# frozen_string_literal: true
+
+$LOAD_PATH.push File.expand_path('lib', __dir__)
 
 # Maintain your gem's version:
 require 'artsy-auth/version'
@@ -15,13 +17,13 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,lib}/**/*', 'Rakefile', 'README.md']
 
-  s.add_dependency 'omniauth-oauth2'
   s.add_dependency 'omniauth-artsy', '>= 0.2.2'
+  s.add_dependency 'omniauth-oauth2'
   s.add_dependency 'rails', '>= 4.2.0'
 
-  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'guard-rubocop'
   s.add_development_dependency 'pry'
+  s.add_development_dependency 'rspec'
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'rubocop'
-  s.add_development_dependency 'guard-rubocop'
 end

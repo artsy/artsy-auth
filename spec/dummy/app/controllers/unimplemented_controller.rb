@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UnimplementedController < ApplicationController
   include ArtsyAuth::Authenticated
 

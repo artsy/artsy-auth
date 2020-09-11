@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ArtsyAuth
   class SessionsController < ActionController::Base
     def create
