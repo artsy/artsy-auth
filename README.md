@@ -53,7 +53,7 @@ end
 
 # Decoding the JWT
 
-The JWT is signed using a different secret from the client secret for OAuth. For Artsy engineers: get it from the `internal_secret` on your corresponding `ClientApplication` model. External engineers, send an email to ashkan@ or orta@ artsymail.com.
+The JWT is signed using a different secret from the client secret for OAuth. For Artsy engineers: get it from the `internal_secret` on your corresponding `ClientApplication` model.
 
 The JWT contains user information that you can get from an API call to get the `me` user account, you can work around not having the secret by making a request for that against the API.
 
