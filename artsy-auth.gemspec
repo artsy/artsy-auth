@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'omniauth-oauth2'
   s.add_dependency 'omniauth-artsy', '>= 0.2.2'
+  s.add_dependency 'omniauth-rails_csrf_protection', '>= 1.0.0'
   s.add_dependency 'rails', '>= 4.2.0'
 
   s.add_development_dependency 'rspec'
