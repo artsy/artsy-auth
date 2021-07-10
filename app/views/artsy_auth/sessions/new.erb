@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <title>Artsy Auth</title>
   </head>
-  <body>
-    <%= button_to 'Log in via Artsy', '/auth/artsy' %>
+  <body style="display: none;">
+    <%= button_to 'Log in via Artsy', '/auth/artsy', form: { id: 'artsy-auth-login-form' } %>
+    <script>
+      document.getElementById('artsy-auth-login-form').submit()
+    </script>
   </body>
 </html>
