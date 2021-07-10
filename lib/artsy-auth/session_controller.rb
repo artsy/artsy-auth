@@ -1,5 +1,7 @@
 module ArtsyAuth
   class SessionsController < ActionController::Base
+    def new; end
+
     def create
       session[:user_id] = auth_hash['uid']
       session[:email] = auth_hash['info']['raw_info']['email']
