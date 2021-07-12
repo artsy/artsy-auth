@@ -10,6 +10,12 @@ references:
     run:
       name: Install dependencies
       command: bundle install
+  print_versions: &print_versions
+    run:
+      name: Print ruby and rails versions
+      command: |
+        ruby -v
+        bundle exec rails -v
   test: &test
     run:
       name: Run test suite
@@ -30,6 +36,7 @@ jobs:
       - checkout
       - <<: *set_env
       - <<: *bundle
+      - <<: *print_versions
       - <<: *test
 
 workflows:
