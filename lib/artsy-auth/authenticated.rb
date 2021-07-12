@@ -19,7 +19,7 @@ module ArtsyAuth
     def clear_session_and_reauth!
       reset_session
       session[:redirect_to] = request.url
-      redirect_to '/auth/artsy'
+      redirect_to '/auth/artsy/new'
     end
 
     def authorized_artsy_token?(token)
