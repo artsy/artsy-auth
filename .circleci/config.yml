@@ -46,4 +46,4 @@ workflows:
           matrix:
             parameters:
               ruby_version: ["2.5", "2.6", "2.7"]
-              rails_version: ["5.0.6", "5.1.4", "6.1.4"]
+              rails_version: ["5.1.4", "6.1.4"]
