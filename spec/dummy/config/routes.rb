@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get 'private' => 'private#index'
   get 'public' => 'application#index'
   get 'unimplemented' => 'unimplemented#index'
+
+  root 'application#index'
 end
