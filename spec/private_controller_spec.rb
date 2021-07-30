@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 module ArtsyAuth
   describe ::PrivateController, type: :controller do
     context 'without session' do
-      it 'redirects to /auth/artsy' do
+      it 'redirects to /auth/artsy/new' do
         get :index
-        expect(response).to redirect_to('/auth/artsy')
+        expect(response).to redirect_to('/auth/artsy/new')
       end
 
       it 'sets session[:redirect_to]' do
@@ -20,7 +22,7 @@ module ArtsyAuth
       end
 
       context 'with authorized_artsy_token? method' do
-        it 'renders page properly with authorized token``' do
+        it 'renders page properly with authorized token' do
           get :index
           expect(response.status).to eq 200
           expect(response.body).to eq 'Hello from authenticated world'

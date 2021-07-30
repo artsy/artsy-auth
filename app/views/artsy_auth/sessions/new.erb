@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Artsy Auth</title>
+  </head>
+  <body>
+    <p id="placeholder" style="visibility: hidden; text-align: center;">Authenticating...</p>
+    <div style="display: none;">
+      <%= button_to 'Log in via Artsy', '/auth/artsy', form: { id: 'artsy-auth-login-form' } %>
+    </div>
+
+    <script>
+      document.getElementById("artsy-auth-login-form").submit();
+      setTimeout(function() {
+        document.getElementById("placeholder").style.visibility = "visible";
+      }, 1000);
+    </script>
+  </body>
+</html>
