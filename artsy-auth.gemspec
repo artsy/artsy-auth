@@ -11,8 +11,8 @@ Gem::Specification.new do |s|
   s.version     = ArtsyAuth::VERSION
   s.authors     = ['Artsy']
   s.email       = ['it@artsymail.com']
-  s.homepage    = 'http://artsy.net'
-  s.summary     = 'ArtsyAuth is a rails based gem that adds Artsy authentication with authorization to your app.'
+  s.homepage    = 'https://www.artsy.net'
+  s.summary     = 'ArtsyAuth is a Rails engine that adds Artsy authentication with authorization to your app.'
   s.description = 'See summary.'
 
   s.files = Dir['{app,config,lib}/**/*', 'Rakefile', 'README.md']
