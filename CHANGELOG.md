@@ -1,6 +1,6 @@
 ### 0.2.1 (Next)
 
-### 0.2.0 (2021-07-30)
+### 0.2.0 (2021-08-02)
 * Mitigate CVE-2015-9284 - [@starsirius](https://github.com/starsirius).
 
 ### 0.1.5 (2017-02-02)
