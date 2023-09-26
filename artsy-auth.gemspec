@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'omniauth-artsy', '>= 0.4.0'
   s.add_dependency 'omniauth-oauth2'
   s.add_dependency 'omniauth-rails_csrf_protection', '>= 1.0.0'
-  s.add_dependency 'rails', '>= 4.2.0'
+  s.add_dependency 'rails', '>= 5.2.0'
 
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'guard-rubocop'
@@ -30,4 +30,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rubocop'
   s.add_development_dependency 'selenium-webdriver'
   s.add_development_dependency 'webdrivers'
+  s.add_development_dependency 'webrick'
 end

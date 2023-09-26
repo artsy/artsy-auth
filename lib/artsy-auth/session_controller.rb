@@ -11,7 +11,7 @@ module ArtsyAuth
 
     def destroy
       reset_session
-      redirect_to "#{ArtsyAuth.config.artsy_api_url}/users/sign_out"
+      redirect_to "#{ArtsyAuth.config.artsy_api_url}/users/sign_out", allow_other_host: true
     end
 
     protected
